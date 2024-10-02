@@ -38,7 +38,7 @@ data %>%
   ) +
   
   scale_x_discrete(
-    labels = c("Acute\nEpisode", "Between\nEpisode")
+    labels = c("Acute\nEpisode", "Remission")
   ) +
   
   theme_bw() +
@@ -48,9 +48,16 @@ data %>%
     panel.grid.minor = element_blank(),
     axis.ticks.y = element_blank(),
     axis.text = element_text(size = 18), 
-    axis.title = element_text(size = 18), 
+    axis.title = element_text(size = 18),
+    axis.title.y = element_text(margin = margin(r = -20)),
     plot.title = element_text(size = 18),
     legend.position = "right",
     legend.text = element_text(size = 18),
     legend.title = element_text(size = 18)
   )
+
+ggsave(
+  "sa2.png",
+  width=4.25,
+  height=4.25
+)
